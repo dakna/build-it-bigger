@@ -7,7 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import app.knapp.jokes.JokeHero;
+import app.knapp.lib.JokeRepository;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -42,9 +42,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void tellJoke(View view) {
-        JokeHero jokeHero = new JokeHero();
+        JokeRepository jokes = new JokeRepository();
 
-        String joke = jokeHero.getJoke();
+        String joke = jokes.getJoke();
         Toast.makeText(this, joke, Toast.LENGTH_SHORT).show();
     }
 

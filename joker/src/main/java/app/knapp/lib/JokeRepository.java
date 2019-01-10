@@ -1,6 +1,6 @@
-package app.knapp.jokes;
+package app.knapp.lib;
 
-public class JokeHero {
+public class JokeRepository {
     public String getJoke() {
         return "This is not a Test";
     }
