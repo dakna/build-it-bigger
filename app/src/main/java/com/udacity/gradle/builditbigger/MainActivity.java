@@ -11,7 +11,7 @@ import app.knapp.lib.JokeRepository;
 import app.knapp.jokes.JokeActivity;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements GoogleCloudEndpointsAsyncTask.JokeReceivedInterface {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,13 +42,16 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void tellJoke(View view) {
-        JokeRepository jokes = new JokeRepository();
-        String joke = jokes.getJoke();
-
+    @Override
+    public void onJokeReceived(String joke) {
         Intent intent = new Intent(this, JokeActivity.class);
         intent.putExtra("joke", joke);
         startActivity(intent);
+    }
+
+    public void tellJoke(View view) {
+        GoogleCloudEndpointsAsyncTask asyncTask = new GoogleCloudEndpointsAsyncTask(this);
+        asyncTask.execute();
     }
 
 
