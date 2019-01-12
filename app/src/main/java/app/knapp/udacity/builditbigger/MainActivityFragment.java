@@ -1,4 +1,4 @@
-package com.udacity.gradle.builditbigger;
+package app.knapp.udacity.builditbigger;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
+import app.knapp.udacity.builditbigger.R;
 
 /**
  * A placeholder fragment containing a simple view.

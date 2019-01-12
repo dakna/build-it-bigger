@@ -1,22 +1,31 @@
-package com.udacity.gradle.builditbigger;
+package app.knapp.udacity.builditbigger;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import app.knapp.lib.JokeRepository;
+import android.widget.Button;
+
+import app.knapp.udacity.builditbigger.R;
 
 import app.knapp.jokes.JokeActivity;
 
 
 public class MainActivity extends AppCompatActivity implements GoogleCloudEndpointsAsyncTask.JokeReceivedInterface {
 
+    private static final String TAG = "MainActivity";
+
+    Button btnTellJoke;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        btnTellJoke = findViewById(R.id.btnTellJoke);
     }
 
 
@@ -44,13 +53,17 @@ public class MainActivity extends AppCompatActivity implements GoogleCloudEndpoi
 
     @Override
     public void onJokeReceived(String joke) {
+        btnTellJoke.setEnabled(true);
+        Log.d(TAG, "onJokeReceived: joke " + joke);
         Intent intent = new Intent(this, JokeActivity.class);
         intent.putExtra("joke", joke);
         startActivity(intent);
     }
 
     public void tellJoke(View view) {
+        Log.d(TAG, "tellJoke: start async task");
         GoogleCloudEndpointsAsyncTask asyncTask = new GoogleCloudEndpointsAsyncTask(this);
+        btnTellJoke.setEnabled(false);
         asyncTask.execute();
     }
 
