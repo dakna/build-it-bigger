@@ -33,7 +33,16 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    flavorDimensions "default"
     productFlavors {
+        paidFlavor {
+            applicationId 'app.knapp.udacity.builditbigger.paid'
+        }
+        freeFlavor {
+            applicationId 'app.knapp.udacity.builditbigger.free'
+
+        }
     }
 }
 

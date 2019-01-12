@@ -1,3 +1,5 @@
+# Build It Bigger project for the Udacity Android Developer Nanodegree
+
 # Gradle for Android and Java Final Project
 
 In this project, you will create an app with multiple flavors that uses
