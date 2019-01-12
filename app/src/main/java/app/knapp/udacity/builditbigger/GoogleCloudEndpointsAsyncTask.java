@@ -12,6 +12,11 @@ import com.udacity.gradle.builditbigger.backend.myApi.MyApi;
 
 import static android.content.ContentValues.TAG;
 
+/*
+    Class originated by https://github.com/GoogleCloudPlatform/gradle-appengine-templates/tree/77e9910911d5412e5efede5fa681ec105a0f02ad/HelloEndpoints#2-connecting-your-android-app-to-the-backend
+    and changed for my own Google Cloud Endpoint. Also added an interface to pass data to the activity
+ */
+
 public class GoogleCloudEndpointsAsyncTask extends AsyncTask<Void, Void, String> {
 
     private static MyApi myApi = null;
