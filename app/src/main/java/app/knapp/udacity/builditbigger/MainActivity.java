@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements GoogleCloudEndpoi
         btnTellJoke.setEnabled(true);
         Log.d(TAG, "onJokeReceived: joke " + joke);
         Intent intent = new Intent(this, JokeActivity.class);
-        intent.putExtra("joke", joke);
+        intent.putExtra(JokeActivity.JOKE, joke);
         startActivity(intent);
     }
 

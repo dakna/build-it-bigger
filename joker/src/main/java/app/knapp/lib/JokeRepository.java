@@ -17,7 +17,7 @@ public class JokeRepository {
 
     public String getJoke() {
 
-        int randomIndex = new Random().nextInt(jokeArray.length-1);
+        int randomIndex = new Random().nextInt(jokeArray.length);
         return jokeArray[randomIndex];
 
     }
